@@ -13,6 +13,8 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as DashboardLayoutRouteRouteImport } from './routes/_dashboardLayout/route'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as DashboardLayoutdashboardDashboardRouteImport } from './routes/_dashboardLayout/(dashboard)/dashboard'
+import { Route as DashboardLayoutmyRequestsMyRequestsRouteImport } from './routes/_dashboardLayout/(my-requests)/my-requests'
+import { Route as DashboardLayoutmyRequestsMyRequestsRequestIdRouteImport } from './routes/_dashboardLayout/(my-requests)/my-requests_.$requestId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -34,16 +36,32 @@ const DashboardLayoutdashboardDashboardRoute =
     path: '/dashboard',
     getParentRoute: () => DashboardLayoutRouteRoute,
   } as any)
+const DashboardLayoutmyRequestsMyRequestsRoute =
+  DashboardLayoutmyRequestsMyRequestsRouteImport.update({
+    id: '/(my-requests)/my-requests',
+    path: '/my-requests',
+    getParentRoute: () => DashboardLayoutRouteRoute,
+  } as any)
+const DashboardLayoutmyRequestsMyRequestsRequestIdRoute =
+  DashboardLayoutmyRequestsMyRequestsRequestIdRouteImport.update({
+    id: '/(my-requests)/my-requests_/$requestId',
+    path: '/my-requests/$requestId',
+    getParentRoute: () => DashboardLayoutRouteRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/login': typeof LoginRoute
   '/dashboard': typeof DashboardLayoutdashboardDashboardRoute
+  '/my-requests': typeof DashboardLayoutmyRequestsMyRequestsRoute
+  '/my-requests/$requestId': typeof DashboardLayoutmyRequestsMyRequestsRequestIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/login': typeof LoginRoute
   '/dashboard': typeof DashboardLayoutdashboardDashboardRoute
+  '/my-requests': typeof DashboardLayoutmyRequestsMyRequestsRoute
+  '/my-requests/$requestId': typeof DashboardLayoutmyRequestsMyRequestsRequestIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -51,18 +69,23 @@ export interface FileRoutesById {
   '/_dashboardLayout': typeof DashboardLayoutRouteRouteWithChildren
   '/login': typeof LoginRoute
   '/_dashboardLayout/(dashboard)/dashboard': typeof DashboardLayoutdashboardDashboardRoute
+  '/_dashboardLayout/(my-requests)/my-requests': typeof DashboardLayoutmyRequestsMyRequestsRoute
+  '/_dashboardLayout/(my-requests)/my-requests_/$requestId': typeof DashboardLayoutmyRequestsMyRequestsRequestIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/login' | '/dashboard'
+  fullPaths:
+    '/' | '/login' | '/dashboard' | '/my-requests' | '/my-requests/$requestId'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/login' | '/dashboard'
+  to: '/' | '/login' | '/dashboard' | '/my-requests' | '/my-requests/$requestId'
   id:
     | '__root__'
     | '/'
     | '/_dashboardLayout'
     | '/login'
     | '/_dashboardLayout/(dashboard)/dashboard'
+    | '/_dashboardLayout/(my-requests)/my-requests'
+    | '/_dashboardLayout/(my-requests)/my-requests_/$requestId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -101,16 +124,36 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardLayoutdashboardDashboardRouteImport
       parentRoute: typeof DashboardLayoutRouteRoute
     }
+    '/_dashboardLayout/(my-requests)/my-requests': {
+      id: '/_dashboardLayout/(my-requests)/my-requests'
+      path: '/my-requests'
+      fullPath: '/my-requests'
+      preLoaderRoute: typeof DashboardLayoutmyRequestsMyRequestsRouteImport
+      parentRoute: typeof DashboardLayoutRouteRoute
+    }
+    '/_dashboardLayout/(my-requests)/my-requests_/$requestId': {
+      id: '/_dashboardLayout/(my-requests)/my-requests_/$requestId'
+      path: '/my-requests/$requestId'
+      fullPath: '/my-requests/$requestId'
+      preLoaderRoute: typeof DashboardLayoutmyRequestsMyRequestsRequestIdRouteImport
+      parentRoute: typeof DashboardLayoutRouteRoute
+    }
   }
 }
 
 interface DashboardLayoutRouteRouteChildren {
   DashboardLayoutdashboardDashboardRoute: typeof DashboardLayoutdashboardDashboardRoute
+  DashboardLayoutmyRequestsMyRequestsRoute: typeof DashboardLayoutmyRequestsMyRequestsRoute
+  DashboardLayoutmyRequestsMyRequestsRequestIdRoute: typeof DashboardLayoutmyRequestsMyRequestsRequestIdRoute
 }
 
 const DashboardLayoutRouteRouteChildren: DashboardLayoutRouteRouteChildren = {
   DashboardLayoutdashboardDashboardRoute:
     DashboardLayoutdashboardDashboardRoute,
+  DashboardLayoutmyRequestsMyRequestsRoute:
+    DashboardLayoutmyRequestsMyRequestsRoute,
+  DashboardLayoutmyRequestsMyRequestsRequestIdRoute:
+    DashboardLayoutmyRequestsMyRequestsRequestIdRoute,
 }
 
 const DashboardLayoutRouteRouteWithChildren =

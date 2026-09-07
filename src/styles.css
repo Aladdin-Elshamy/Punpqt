@@ -148,3 +148,8 @@ body {
     @apply font-sans;
   }
 }
+
+@utility trim {
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic
+}
