@@ -1,16 +1,9 @@
 import { createFileRoute } from '@tanstack/react-router'
 import Header from './-sections/Header'
-import RequestSearch from './-sections/RequestSearch'
-import RequestsList from './-sections/RequestsList'
-const filters = [
-  'All Requests',
-  'Waiting for Quotes',
-  'Quotes Ready',
-  'Payment Required',
-]
-export const Route = createFileRoute(
-  '/_dashboardLayout/(my-requests)/upload',
-)({
+import UploadFilesForm from './-sections/UploadFilesForm'
+import UploadOfferCard from './-sections/UploadOfferCard'
+
+export const Route = createFileRoute('/_dashboardLayout/(my-requests)/upload')({
   component: RouteComponent,
 })
 
@@ -21,8 +14,10 @@ function RouteComponent() {
         title="Upload Files"
         description="Please upload all the necessary files for your printing request."
       />
-      <RequestSearch filters={filters} />
-      <RequestsList />
+      <div className="grid items-start gap-6 font-atyp lg:grid-cols-[minmax(0,1.7fr)_minmax(0,1fr)]">
+        <UploadFilesForm />
+        <UploadOfferCard />
+      </div>
     </div>
   )
 }
