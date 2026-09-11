@@ -9,7 +9,7 @@ const filters = [
   'Payment Required',
 ]
 export const Route = createFileRoute(
-  '/_dashboardLayout/(my-requests)/my-requests',
+  '/_dashboardLayout/(my-requests)/upload',
 )({
   component: RouteComponent,
 })
@@ -18,9 +18,8 @@ function RouteComponent() {
   return (
     <div className="container mx-auto flex w-full flex-col gap-10 px-4 pb-16 sm:px-6 lg:px-10">
       <Header
-        title="Requests"
-        description="View, compare, and manage your printing requests before production begins."
-        newRequest
+        title="Upload Files"
+        description="Please upload all the necessary files for your printing request."
       />
       <RequestSearch filters={filters} />
       <RequestsList />

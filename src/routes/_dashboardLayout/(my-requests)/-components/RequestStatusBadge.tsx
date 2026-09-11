@@ -1,9 +1,9 @@
 import { Badge } from '#/components/ui/badge'
 
 const statusClasses = {
-  'quotes-ready': 'bg-[#FDF2DA] text-[#FBB724]',
+  'quotes-ready': 'bg-[#E7F1F2] text-primary',
   'waiting-for-quotes': 'bg-[#FFF7E0] text-[#D89900]',
-  'payment-required': 'bg-[#EEF0FF] text-[#3349C9]',
+  'payment-required': 'bg-[#E8E9F4] text-[#2436FB]',
 } as const
 
 type RequestStatus = keyof typeof statusClasses

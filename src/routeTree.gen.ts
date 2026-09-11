@@ -14,6 +14,7 @@ import { Route as DashboardLayoutRouteRouteImport } from './routes/_dashboardLay
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as DashboardLayoutdashboardDashboardRouteImport } from './routes/_dashboardLayout/(dashboard)/dashboard'
 import { Route as DashboardLayoutmyRequestsMyRequestsRouteImport } from './routes/_dashboardLayout/(my-requests)/my-requests'
+import { Route as DashboardLayoutmyRequestsUploadRouteImport } from './routes/_dashboardLayout/(my-requests)/upload'
 import { Route as DashboardLayoutmyRequestsMyRequestsRequestIdRouteImport } from './routes/_dashboardLayout/(my-requests)/my-requests_.$requestId'
 
 const IndexRoute = IndexRouteImport.update({
@@ -42,6 +43,12 @@ const DashboardLayoutmyRequestsMyRequestsRoute =
     path: '/my-requests',
     getParentRoute: () => DashboardLayoutRouteRoute,
   } as any)
+const DashboardLayoutmyRequestsUploadRoute =
+  DashboardLayoutmyRequestsUploadRouteImport.update({
+    id: '/(my-requests)/upload',
+    path: '/upload',
+    getParentRoute: () => DashboardLayoutRouteRoute,
+  } as any)
 const DashboardLayoutmyRequestsMyRequestsRequestIdRoute =
   DashboardLayoutmyRequestsMyRequestsRequestIdRouteImport.update({
     id: '/(my-requests)/my-requests_/$requestId',
@@ -54,6 +61,7 @@ export interface FileRoutesByFullPath {
   '/login': typeof LoginRoute
   '/dashboard': typeof DashboardLayoutdashboardDashboardRoute
   '/my-requests': typeof DashboardLayoutmyRequestsMyRequestsRoute
+  '/upload': typeof DashboardLayoutmyRequestsUploadRoute
   '/my-requests/$requestId': typeof DashboardLayoutmyRequestsMyRequestsRequestIdRoute
 }
 export interface FileRoutesByTo {
@@ -61,6 +69,7 @@ export interface FileRoutesByTo {
   '/login': typeof LoginRoute
   '/dashboard': typeof DashboardLayoutdashboardDashboardRoute
   '/my-requests': typeof DashboardLayoutmyRequestsMyRequestsRoute
+  '/upload': typeof DashboardLayoutmyRequestsUploadRoute
   '/my-requests/$requestId': typeof DashboardLayoutmyRequestsMyRequestsRequestIdRoute
 }
 export interface FileRoutesById {
@@ -70,14 +79,26 @@ export interface FileRoutesById {
   '/login': typeof LoginRoute
   '/_dashboardLayout/(dashboard)/dashboard': typeof DashboardLayoutdashboardDashboardRoute
   '/_dashboardLayout/(my-requests)/my-requests': typeof DashboardLayoutmyRequestsMyRequestsRoute
+  '/_dashboardLayout/(my-requests)/upload': typeof DashboardLayoutmyRequestsUploadRoute
   '/_dashboardLayout/(my-requests)/my-requests_/$requestId': typeof DashboardLayoutmyRequestsMyRequestsRequestIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/login' | '/dashboard' | '/my-requests' | '/my-requests/$requestId'
+    | '/'
+    | '/login'
+    | '/dashboard'
+    | '/my-requests'
+    | '/upload'
+    | '/my-requests/$requestId'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/login' | '/dashboard' | '/my-requests' | '/my-requests/$requestId'
+  to:
+    | '/'
+    | '/login'
+    | '/dashboard'
+    | '/my-requests'
+    | '/upload'
+    | '/my-requests/$requestId'
   id:
     | '__root__'
     | '/'
@@ -85,6 +106,7 @@ export interface FileRouteTypes {
     | '/login'
     | '/_dashboardLayout/(dashboard)/dashboard'
     | '/_dashboardLayout/(my-requests)/my-requests'
+    | '/_dashboardLayout/(my-requests)/upload'
     | '/_dashboardLayout/(my-requests)/my-requests_/$requestId'
   fileRoutesById: FileRoutesById
 }
@@ -131,6 +153,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardLayoutmyRequestsMyRequestsRouteImport
       parentRoute: typeof DashboardLayoutRouteRoute
     }
+    '/_dashboardLayout/(my-requests)/upload': {
+      id: '/_dashboardLayout/(my-requests)/upload'
+      path: '/upload'
+      fullPath: '/upload'
+      preLoaderRoute: typeof DashboardLayoutmyRequestsUploadRouteImport
+      parentRoute: typeof DashboardLayoutRouteRoute
+    }
     '/_dashboardLayout/(my-requests)/my-requests_/$requestId': {
       id: '/_dashboardLayout/(my-requests)/my-requests_/$requestId'
       path: '/my-requests/$requestId'
@@ -144,6 +173,7 @@ declare module '@tanstack/react-router' {
 interface DashboardLayoutRouteRouteChildren {
   DashboardLayoutdashboardDashboardRoute: typeof DashboardLayoutdashboardDashboardRoute
   DashboardLayoutmyRequestsMyRequestsRoute: typeof DashboardLayoutmyRequestsMyRequestsRoute
+  DashboardLayoutmyRequestsUploadRoute: typeof DashboardLayoutmyRequestsUploadRoute
   DashboardLayoutmyRequestsMyRequestsRequestIdRoute: typeof DashboardLayoutmyRequestsMyRequestsRequestIdRoute
 }
 
@@ -152,6 +182,7 @@ const DashboardLayoutRouteRouteChildren: DashboardLayoutRouteRouteChildren = {
     DashboardLayoutdashboardDashboardRoute,
   DashboardLayoutmyRequestsMyRequestsRoute:
     DashboardLayoutmyRequestsMyRequestsRoute,
+  DashboardLayoutmyRequestsUploadRoute: DashboardLayoutmyRequestsUploadRoute,
   DashboardLayoutmyRequestsMyRequestsRequestIdRoute:
     DashboardLayoutmyRequestsMyRequestsRequestIdRoute,
 }
