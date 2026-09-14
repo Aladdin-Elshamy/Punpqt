@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
-import Header from './-sections/Header'
-import RequestSearch from './-sections/RequestSearch'
+import Header from '../../../common/sections/Header'
+import RequestSearch from '../../../common/sections/RequestSearch'
 import RequestsList from './-sections/RequestsList'
 const filters = [
   'All Requests',

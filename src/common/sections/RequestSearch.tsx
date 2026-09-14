@@ -3,11 +3,11 @@ import { Input } from '#/components/ui/input'
 import { cn } from '#/lib/utils'
 import { Search } from 'lucide-react'
 import { useState } from 'react'
-import RequestSearchSelect from '../-components/RequestSearchSelect'
+import RequestSearchSelect from '../components/RequestSearchSelect'
 
 
 
-export default function RequestSearch({ hideFilters, filters }: { hideFilters?: boolean, filters: string[] }) {
+export default function RequestSearch({ hideFilters, filters, placeholder }: { hideFilters?: boolean, filters: string[], placeholder?: string }) {
   const [selectedFilter, setSelectedFilter] = useState(0)
   return (
     <section className="rounded-2xl relative z-10 bg-primary/33 p-3 font-atyp sm:p-4">
@@ -19,7 +19,7 @@ export default function RequestSearch({ hideFilters, filters }: { hideFilters?: 
           />
           <Input
             aria-label="Search requests"
-            placeholder="Search requests by title, ID, or category..."
+            placeholder={placeholder || "Search requests by title, ID, or category..."}
             className="h-10 border-0 bg-background ps-9 shadow-none rounded-xl"
           />
           <Button className="h-10 px-2.5 text-xs absolute top-1/2 inset-e-0 -translate-y-1/2 active:-translate-y-[calc(50%-1px)]! rounded-xl ">Search</Button>

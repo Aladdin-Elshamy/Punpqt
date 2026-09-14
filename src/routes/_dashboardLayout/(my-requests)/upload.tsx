@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import Header from './-sections/Header'
+import Header from '../../../common/sections/Header'
 import UploadFilesForm from './-sections/UploadFilesForm'
 import UploadOfferCard from './-sections/UploadOfferCard'
 

@@ -3,7 +3,7 @@ import QuotationAcceptanceBar from '../-components/QuotationAcceptanceBar'
 
 import QuotationSummaryCard from '#/common/components/QuotationSummaryCard'
 import QuotationBanner from '#/common/components/QuotationBanner'
-import RequestSearch from './RequestSearch'
+import RequestSearch from '../../../../common/sections/RequestSearch'
 import {
   Award,
   CalendarDays,

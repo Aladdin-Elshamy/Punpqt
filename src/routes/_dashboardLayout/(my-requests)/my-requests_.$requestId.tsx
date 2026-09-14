@@ -1,7 +1,7 @@
 import { createFileRoute, useRouter } from '@tanstack/react-router'
 import RequestDetailsTabs from './-sections/RequestDetailsTabs'
 import RequestStatusBadge from './-components/RequestStatusBadge'
-import Header from './-sections/Header'
+import Header from '../../../common/sections/Header'
 import z from 'zod'
 import { Button } from '#/components/ui/button'
 const myRequestsSchema = z.object({

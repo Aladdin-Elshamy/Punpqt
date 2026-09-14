@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as DashboardLayoutRouteRouteImport } from './routes/_dashboardLayout/route'
 import { Route as LoginRouteImport } from './routes/login'
+import { Route as DashboardLayoutactiveOrdersActiveOrdersRouteImport } from './routes/_dashboardLayout/(active-orders)/active-orders'
 import { Route as DashboardLayoutdashboardDashboardRouteImport } from './routes/_dashboardLayout/(dashboard)/dashboard'
 import { Route as DashboardLayoutmyRequestsMyRequestsRouteImport } from './routes/_dashboardLayout/(my-requests)/my-requests'
 import { Route as DashboardLayoutmyRequestsUploadRouteImport } from './routes/_dashboardLayout/(my-requests)/upload'
@@ -31,6 +32,12 @@ const LoginRoute = LoginRouteImport.update({
   path: '/login',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DashboardLayoutactiveOrdersActiveOrdersRoute =
+  DashboardLayoutactiveOrdersActiveOrdersRouteImport.update({
+    id: '/(active-orders)/active-orders',
+    path: '/active-orders',
+    getParentRoute: () => DashboardLayoutRouteRoute,
+  } as any)
 const DashboardLayoutdashboardDashboardRoute =
   DashboardLayoutdashboardDashboardRouteImport.update({
     id: '/(dashboard)/dashboard',
@@ -59,6 +66,7 @@ const DashboardLayoutmyRequestsMyRequestsRequestIdRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/login': typeof LoginRoute
+  '/active-orders': typeof DashboardLayoutactiveOrdersActiveOrdersRoute
   '/dashboard': typeof DashboardLayoutdashboardDashboardRoute
   '/my-requests': typeof DashboardLayoutmyRequestsMyRequestsRoute
   '/upload': typeof DashboardLayoutmyRequestsUploadRoute
@@ -67,6 +75,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/login': typeof LoginRoute
+  '/active-orders': typeof DashboardLayoutactiveOrdersActiveOrdersRoute
   '/dashboard': typeof DashboardLayoutdashboardDashboardRoute
   '/my-requests': typeof DashboardLayoutmyRequestsMyRequestsRoute
   '/upload': typeof DashboardLayoutmyRequestsUploadRoute
@@ -77,6 +86,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/_dashboardLayout': typeof DashboardLayoutRouteRouteWithChildren
   '/login': typeof LoginRoute
+  '/_dashboardLayout/(active-orders)/active-orders': typeof DashboardLayoutactiveOrdersActiveOrdersRoute
   '/_dashboardLayout/(dashboard)/dashboard': typeof DashboardLayoutdashboardDashboardRoute
   '/_dashboardLayout/(my-requests)/my-requests': typeof DashboardLayoutmyRequestsMyRequestsRoute
   '/_dashboardLayout/(my-requests)/upload': typeof DashboardLayoutmyRequestsUploadRoute
@@ -87,6 +97,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/login'
+    | '/active-orders'
     | '/dashboard'
     | '/my-requests'
     | '/upload'
@@ -95,6 +106,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/login'
+    | '/active-orders'
     | '/dashboard'
     | '/my-requests'
     | '/upload'
@@ -104,6 +116,7 @@ export interface FileRouteTypes {
     | '/'
     | '/_dashboardLayout'
     | '/login'
+    | '/_dashboardLayout/(active-orders)/active-orders'
     | '/_dashboardLayout/(dashboard)/dashboard'
     | '/_dashboardLayout/(my-requests)/my-requests'
     | '/_dashboardLayout/(my-requests)/upload'
@@ -139,6 +152,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LoginRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_dashboardLayout/(active-orders)/active-orders': {
+      id: '/_dashboardLayout/(active-orders)/active-orders'
+      path: '/active-orders'
+      fullPath: '/active-orders'
+      preLoaderRoute: typeof DashboardLayoutactiveOrdersActiveOrdersRouteImport
+      parentRoute: typeof DashboardLayoutRouteRoute
+    }
     '/_dashboardLayout/(dashboard)/dashboard': {
       id: '/_dashboardLayout/(dashboard)/dashboard'
       path: '/dashboard'
@@ -171,6 +191,7 @@ declare module '@tanstack/react-router' {
 }
 
 interface DashboardLayoutRouteRouteChildren {
+  DashboardLayoutactiveOrdersActiveOrdersRoute: typeof DashboardLayoutactiveOrdersActiveOrdersRoute
   DashboardLayoutdashboardDashboardRoute: typeof DashboardLayoutdashboardDashboardRoute
   DashboardLayoutmyRequestsMyRequestsRoute: typeof DashboardLayoutmyRequestsMyRequestsRoute
   DashboardLayoutmyRequestsUploadRoute: typeof DashboardLayoutmyRequestsUploadRoute
@@ -178,6 +199,8 @@ interface DashboardLayoutRouteRouteChildren {
 }
 
 const DashboardLayoutRouteRouteChildren: DashboardLayoutRouteRouteChildren = {
+  DashboardLayoutactiveOrdersActiveOrdersRoute:
+    DashboardLayoutactiveOrdersActiveOrdersRoute,
   DashboardLayoutdashboardDashboardRoute:
     DashboardLayoutdashboardDashboardRoute,
   DashboardLayoutmyRequestsMyRequestsRoute:
