@@ -17,6 +17,7 @@ import { Route as DashboardLayoutdashboardDashboardRouteImport } from './routes/
 import { Route as DashboardLayoutmyRequestsMyRequestsRouteImport } from './routes/_dashboardLayout/(my-requests)/my-requests'
 import { Route as DashboardLayoutmyRequestsUploadRouteImport } from './routes/_dashboardLayout/(my-requests)/upload'
 import { Route as DashboardLayoutmyRequestsMyRequestsRequestIdRouteImport } from './routes/_dashboardLayout/(my-requests)/my-requests_.$requestId'
+import { Route as DashboardLayoutactiveOrdersActiveOrdersOrderIdOrderDetailsRouteImport } from './routes/_dashboardLayout/(active-orders)/active-orders_.$orderId.order-details'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -62,6 +63,12 @@ const DashboardLayoutmyRequestsMyRequestsRequestIdRoute =
     path: '/my-requests/$requestId',
     getParentRoute: () => DashboardLayoutRouteRoute,
   } as any)
+const DashboardLayoutactiveOrdersActiveOrdersOrderIdOrderDetailsRoute =
+  DashboardLayoutactiveOrdersActiveOrdersOrderIdOrderDetailsRouteImport.update({
+    id: '/(active-orders)/active-orders_/$orderId/order-details',
+    path: '/active-orders/$orderId/order-details',
+    getParentRoute: () => DashboardLayoutRouteRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -71,6 +78,7 @@ export interface FileRoutesByFullPath {
   '/my-requests': typeof DashboardLayoutmyRequestsMyRequestsRoute
   '/upload': typeof DashboardLayoutmyRequestsUploadRoute
   '/my-requests/$requestId': typeof DashboardLayoutmyRequestsMyRequestsRequestIdRoute
+  '/active-orders/$orderId/order-details': typeof DashboardLayoutactiveOrdersActiveOrdersOrderIdOrderDetailsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -80,6 +88,7 @@ export interface FileRoutesByTo {
   '/my-requests': typeof DashboardLayoutmyRequestsMyRequestsRoute
   '/upload': typeof DashboardLayoutmyRequestsUploadRoute
   '/my-requests/$requestId': typeof DashboardLayoutmyRequestsMyRequestsRequestIdRoute
+  '/active-orders/$orderId/order-details': typeof DashboardLayoutactiveOrdersActiveOrdersOrderIdOrderDetailsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -91,6 +100,7 @@ export interface FileRoutesById {
   '/_dashboardLayout/(my-requests)/my-requests': typeof DashboardLayoutmyRequestsMyRequestsRoute
   '/_dashboardLayout/(my-requests)/upload': typeof DashboardLayoutmyRequestsUploadRoute
   '/_dashboardLayout/(my-requests)/my-requests_/$requestId': typeof DashboardLayoutmyRequestsMyRequestsRequestIdRoute
+  '/_dashboardLayout/(active-orders)/active-orders_/$orderId/order-details': typeof DashboardLayoutactiveOrdersActiveOrdersOrderIdOrderDetailsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -102,6 +112,7 @@ export interface FileRouteTypes {
     | '/my-requests'
     | '/upload'
     | '/my-requests/$requestId'
+    | '/active-orders/$orderId/order-details'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -111,6 +122,7 @@ export interface FileRouteTypes {
     | '/my-requests'
     | '/upload'
     | '/my-requests/$requestId'
+    | '/active-orders/$orderId/order-details'
   id:
     | '__root__'
     | '/'
@@ -121,6 +133,7 @@ export interface FileRouteTypes {
     | '/_dashboardLayout/(my-requests)/my-requests'
     | '/_dashboardLayout/(my-requests)/upload'
     | '/_dashboardLayout/(my-requests)/my-requests_/$requestId'
+    | '/_dashboardLayout/(active-orders)/active-orders_/$orderId/order-details'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -187,6 +200,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardLayoutmyRequestsMyRequestsRequestIdRouteImport
       parentRoute: typeof DashboardLayoutRouteRoute
     }
+    '/_dashboardLayout/(active-orders)/active-orders_/$orderId/order-details': {
+      id: '/_dashboardLayout/(active-orders)/active-orders_/$orderId/order-details'
+      path: '/active-orders/$orderId/order-details'
+      fullPath: '/active-orders/$orderId/order-details'
+      preLoaderRoute: typeof DashboardLayoutactiveOrdersActiveOrdersOrderIdOrderDetailsRouteImport
+      parentRoute: typeof DashboardLayoutRouteRoute
+    }
   }
 }
 
@@ -196,6 +216,7 @@ interface DashboardLayoutRouteRouteChildren {
   DashboardLayoutmyRequestsMyRequestsRoute: typeof DashboardLayoutmyRequestsMyRequestsRoute
   DashboardLayoutmyRequestsUploadRoute: typeof DashboardLayoutmyRequestsUploadRoute
   DashboardLayoutmyRequestsMyRequestsRequestIdRoute: typeof DashboardLayoutmyRequestsMyRequestsRequestIdRoute
+  DashboardLayoutactiveOrdersActiveOrdersOrderIdOrderDetailsRoute: typeof DashboardLayoutactiveOrdersActiveOrdersOrderIdOrderDetailsRoute
 }
 
 const DashboardLayoutRouteRouteChildren: DashboardLayoutRouteRouteChildren = {
@@ -208,6 +229,8 @@ const DashboardLayoutRouteRouteChildren: DashboardLayoutRouteRouteChildren = {
   DashboardLayoutmyRequestsUploadRoute: DashboardLayoutmyRequestsUploadRoute,
   DashboardLayoutmyRequestsMyRequestsRequestIdRoute:
     DashboardLayoutmyRequestsMyRequestsRequestIdRoute,
+  DashboardLayoutactiveOrdersActiveOrdersOrderIdOrderDetailsRoute:
+    DashboardLayoutactiveOrdersActiveOrdersOrderIdOrderDetailsRoute,
 }
 
 const DashboardLayoutRouteRouteWithChildren =

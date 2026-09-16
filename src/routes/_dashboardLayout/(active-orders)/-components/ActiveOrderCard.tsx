@@ -1,40 +1,9 @@
-import { ThumbsUp, TriangleAlert } from 'lucide-react'
+import { statuses } from './orderStatuses'
 import { Badge } from '#/components/ui/badge'
 import { Button } from '#/components/ui/button'
 import { Card, CardContent, CardHeader } from '#/components/ui/card'
 import { Separator } from '#/components/ui/separator'
 import { cn } from '#/lib/utils'
-import Check from '#/common/icons/Check'
-
-const statuses = {
-  'sample-review': {
-    label: 'Sample Review',
-    icon: TriangleAlert,
-    tone: 'bg-[#FFFAEB] text-[#FFB800]',
-    progress: 'bg-[#FFD65F]',
-    completed: 3,
-    action: 'Review Sample',
-    button: 'bg-[#FFC21B] text-white hover:bg-[#FFB800]',
-  },
-  delivered: {
-    label: 'Delivered',
-    icon: ThumbsUp,
-    tone: 'bg-[#EFF7F7] text-[#006970]',
-    progress: 'bg-[#0D7377]',
-    completed: 5,
-    action: 'Review',
-    button: 'bg-primary text-white hover:bg-primary/90',
-  },
-  'in-production': {
-    label: 'In Production',
-    icon: Check,
-    tone: 'bg-[#F1F9FF] text-[#0088FF]',
-    progress: 'bg-[#0088FF]',
-    completed: 4,
-    action: null,
-    button: '',
-  },
-} as const
 
 export interface ActiveOrder {
   id: string
@@ -100,7 +69,7 @@ export default function ActiveOrderCard({
             <Badge
               key={tag}
               variant="secondary"
-              className="h-5 bg-[#F4F4F6] px-3 text-[10px] font-normal text-[#25254D]"
+              className="h-5 bg-[#F4F4F6] px-3 text-xs text-muted-foreground font-medium"
             >
               {tag}
             </Badge>
@@ -129,7 +98,9 @@ export default function ActiveOrderCard({
         <Separator className="my-5 bg-[#F1F1F3]" />
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="text-xs text-muted-foreground font-semibold">Expected Delivery</p>
+            <p className="text-xs text-muted-foreground font-semibold">
+              Expected Delivery
+            </p>
             <time
               dateTime={order.expectedDelivery}
               className="mt-2 block text-sm font-medium"
