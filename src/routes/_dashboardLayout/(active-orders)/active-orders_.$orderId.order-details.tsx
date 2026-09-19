@@ -1,8 +1,10 @@
+import OrderDetailsSection from './-sections/OrderDetailsSection'
 import OrderDetailsHeader from './-components/OrderDetailsHeader'
 import { createFileRoute } from '@tanstack/react-router'
 import OrderDetailsTabs from './-components/OrderDetailsTabs'
 import ProjectJourney from './-components/ProjectJourney'
 import JourneyStepHint from './-components/JourneyStepHint'
+import DesignFilesSection from './-sections/DesignFiles'
 
 export const Route = createFileRoute(
   '/_dashboardLayout/(active-orders)/active-orders_/$orderId/order-details',
@@ -24,6 +26,31 @@ function RouteComponent() {
       />
       <OrderDetailsTabs
         messageCount={3}
+        designFiles={<DesignFilesSection />}
+        details={
+          <OrderDetailsSection
+            productType="Business Cards"
+            orderId="RQ-2026-001"
+            quantity={1000}
+            specifications={[
+              'Matt Lamination',
+              'Gloss Lamination',
+              'Spot UV',
+              'Die-Cut',
+              '350 GSM',
+              'Soft Touch',
+              'Standard Size (85 x 55 mm)',
+            ]}
+            printer={{
+              name: 'Quick Print Services',
+              initials: 'QP',
+              rating: 4.7,
+            }}
+            total={890}
+            currency="EGP"
+            placedDate="2026-04-18"
+          />
+        }
         journey={
           <ProjectJourney
             activeStep="production"

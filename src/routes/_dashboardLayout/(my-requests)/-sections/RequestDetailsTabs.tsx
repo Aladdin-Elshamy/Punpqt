@@ -1,6 +1,6 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '#/components/ui/tabs'
 import { useState } from 'react'
-import type { RequestDetails } from '../-components/ProductInformationCard'
+import type { RequestDetails } from '../../../../common/components/ProductInformationCard'
 import QuotationPendingState from './QuotationPendingState'
 import RequestOverview from './RequestOverview'
 import { cn } from '#/lib/utils'
@@ -16,7 +16,7 @@ export default function RequestDetailsTabs({
   request,
 }: RequestDetailsTabsProps) {
   const [activatTab, setActivateTab] = useState('overview')
-  const {status} = useSearch({from:'/_dashboardLayout/(my-requests)/my-requests_/$requestId'})
+  const { status } = useSearch({ from: '/_dashboardLayout/(my-requests)/my-requests_/$requestId' })
   return (
     <Tabs
       value={activatTab}

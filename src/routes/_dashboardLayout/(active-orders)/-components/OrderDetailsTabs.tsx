@@ -43,7 +43,6 @@ export default function OrderDetailsTabs({
       empty: 'Messages are not connected yet.',
     },
   ]
-  console.log(activeTab)
   return (
     <Tabs
       value={activeTab}
@@ -55,9 +54,9 @@ export default function OrderDetailsTabs({
           aria-label="Order details"
           className="h-auto min-h-11 gap-1 rounded-2xl bg-[#EDEEF2] p-1"
         >
-          {tabs.map((tab) => (
+          {tabs.map((tab, index) => (
             <TabsTrigger
-              key={tab.value}
+              key={index}
               value={tab.value}
               className={cn(
                 "min-h-9 flex-none rounded-xl px-4 py-2 text-xs font-semibold",

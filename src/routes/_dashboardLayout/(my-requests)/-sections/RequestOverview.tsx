@@ -1,9 +1,9 @@
 import ProductInformationCard, {
   type RequestDetails,
-} from '../-components/ProductInformationCard'
+} from '../../../../common/components/ProductInformationCard'
 import QuotationStatusCard from '../-components/QuotationStatusCard'
 import RequestActivityTimeline from '../-components/RequestActivityTimeline'
-import RequestSupportDetails from '../-components/RequestSupportDetails'
+import RequestSupportDetails from '../../../../common/sections/SupportDetails'
 
 type RequestOverviewProps = {
   request: RequestDetails

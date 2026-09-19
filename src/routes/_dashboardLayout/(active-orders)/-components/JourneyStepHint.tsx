@@ -1,6 +1,7 @@
 import { CircleAlert, Clock } from 'lucide-react'
 import type { ReactNode } from 'react'
 import { Button } from '#/components/ui/button'
+import { cn } from '#/lib/utils'
 
 export interface JourneyStepHintProps {
   title: string
@@ -8,6 +9,7 @@ export interface JourneyStepHintProps {
   tone?: 'info' | 'attention'
   supplementaryText?: string
   action?: { label: string; onClick: () => void; disabled?: boolean }
+  className?: string
 }
 
 export default function JourneyStepHint({
@@ -16,10 +18,13 @@ export default function JourneyStepHint({
   tone = 'info',
   supplementaryText,
   action,
+  className
 }: JourneyStepHintProps) {
   const Icon = tone === 'attention' ? CircleAlert : Clock
   return (
-    <div className="rounded-2xl border border-primay/20 bg-primary/5 p-5 sm:px-8 sm:py-6">
+    <div className={cn("rounded-2xl border border-primay/20 bg-primary/5 p-5 sm:px-8 sm:py-6",
+      className
+    )}>
       <div className="flex flex-wrap items-center gap-x-8 gap-y-2">
         <div className="flex items-center gap-3">
           <Icon

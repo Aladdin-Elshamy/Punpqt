@@ -1,14 +1,14 @@
 import { Badge } from '#/components/ui/badge'
 import { Card, CardContent } from '#/components/ui/card'
 import { Separator } from '#/components/ui/separator'
-import { Box, Package } from 'lucide-react'
+import { Package } from 'lucide-react'
 
 export type RequestDetails = {
   requestId: string
   productType: string
   quantity: string
-  createdAt: string
-  specifications: readonly string[]
+  createdAt?: string
+  specifications: string[];
 }
 
 type ProductInformationCardProps = {
@@ -22,7 +22,7 @@ export default function ProductInformationCard({
     { label: 'Product Type', value: request.productType },
     { label: 'Request ID', value: request.requestId },
     { label: 'Quantity', value: request.quantity },
-    { label: 'Created', value: request.createdAt },
+    ...(request.createdAt ? [{ label: 'Created', value: request.createdAt }] : []),
   ] as const
 
   return (
