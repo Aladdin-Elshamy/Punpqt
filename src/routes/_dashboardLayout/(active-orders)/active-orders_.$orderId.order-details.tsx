@@ -5,6 +5,7 @@ import OrderDetailsTabs from './-components/OrderDetailsTabs'
 import ProjectJourney from './-components/ProjectJourney'
 import JourneyStepHint from './-components/JourneyStepHint'
 import DesignFilesSection from './-sections/DesignFiles'
+import MessagesSection from './-sections/Messages'
 
 export const Route = createFileRoute(
   '/_dashboardLayout/(active-orders)/active-orders_/$orderId/order-details',
@@ -27,6 +28,7 @@ function RouteComponent() {
       <OrderDetailsTabs
         messageCount={3}
         designFiles={<DesignFilesSection />}
+        messages={<MessagesSection />}
         details={
           <OrderDetailsSection
             productType="Business Cards"
