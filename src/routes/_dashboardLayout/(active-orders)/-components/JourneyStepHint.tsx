@@ -5,9 +5,9 @@ import { cn } from '#/lib/utils'
 
 export interface JourneyStepHintProps {
   title: string
-  description: ReactNode
+  description?: string
   tone?: 'info' | 'attention'
-  supplementaryText?: string
+  supplementaryText?: string | ReactNode
   action?: { label: string; onClick: () => void; disabled?: boolean }
   className?: string
 }
@@ -25,7 +25,7 @@ export default function JourneyStepHint({
     <div className={cn("rounded-2xl border border-primay/20 bg-primary/5 p-5 sm:px-8 sm:py-6",
       className
     )}>
-      <div className="flex flex-wrap items-center gap-x-8 gap-y-2">
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
         <div className="flex items-center gap-3">
           <Icon
             className="size-5 shrink-0 text-primary"
@@ -36,15 +36,19 @@ export default function JourneyStepHint({
             {title}
           </h4>
         </div>
-        {supplementaryText && (
+        {supplementaryText && typeof supplementaryText === 'string' ? (
           <p className="text-sm font-semibold text-primary">
             {supplementaryText}
           </p>
+        ) : (
+          supplementaryText
         )}
       </div>
-      <div className="mt-2 text-sm leading-relaxed font-medium text-muted-foreground">
-        {description}
-      </div>
+      {description && (
+        <div className="mt-2 text-sm leading-relaxed font-medium text-muted-foreground">
+          {description}
+        </div>
+      )}
       {action && (
         <div className="mt-3 flex justify-end">
           <Button
