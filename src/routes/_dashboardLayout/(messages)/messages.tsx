@@ -54,7 +54,7 @@ function RouteComponent() {
         </div>
       </div>
 
-      <div className="relative z-10 grid grid-cols-1 gap-6 lg:grid-cols-[320px_1fr] xl:grid-cols-[340px_1fr] items-stretch h-[640px]">
+      <div className="relative z-10 grid grid-cols-1 gap-6 lg:grid-cols-[320px_1fr] xl:grid-cols-[340px_1fr] items-stretch h-160">
         {/* Left pane: Conversations List */}
         <ConversationsListSection
           className={selectedConversationId ? 'hidden lg:flex' : 'flex'}

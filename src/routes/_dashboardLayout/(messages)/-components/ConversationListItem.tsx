@@ -20,7 +20,7 @@ export default function ConversationListItem({
       onClick={onClick}
       aria-current={isSelected ? 'true' : undefined}
       className={cn(
-        'relative flex w-full cursor-pointer items-center gap-3 px-4 py-3.5 text-left transition-colors',
+        'relative flex w-full cursor-pointer items-center gap-3 px-4 py-3.5 text-start transition-colors',
         isSelected
           ? 'bg-[#eef7f6] hover:bg-[#eef7f6]'
           : 'bg-white hover:bg-gray-100/80',
@@ -64,7 +64,7 @@ export default function ConversationListItem({
             variant="default"
             className="size-4.5 min-w-4.5 rounded-full p-0 flex items-center justify-center text-[10px] font-semibold text-white bg-primary hover:bg-primary"
           >
-            {conversation.unreadCount}
+            <span className='trim'>{conversation.unreadCount}</span>
           </Badge>
         ) : null}
       </div>
