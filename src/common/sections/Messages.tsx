@@ -1,11 +1,18 @@
 import { useEffect, useRef, useState } from 'react'
-import { initialMessages } from '../-data/chatMessages'
-import type { ChatAttachment } from '../-data/chatMessages'
-import MessagesHeader from '../-components/MessagesHeader'
-import MessagesTranscript from '../-components/MessagesTranscript'
-import MessageComposer from '../-components/MessageComposer'
+import { initialMessages } from '../../routes/_dashboardLayout/(active-orders)/-data/chatMessages'
+import type { ChatAttachment } from '../../routes/_dashboardLayout/(active-orders)/-data/chatMessages'
+import MessagesHeader from '../../routes/_dashboardLayout/(active-orders)/-components/MessagesHeader'
+import MessagesTranscript from '../../routes/_dashboardLayout/(active-orders)/-components/MessagesTranscript'
+import MessageComposer from '../../routes/_dashboardLayout/(active-orders)/-components/MessageComposer'
 
-export default function Messages() {
+import { cn } from '@/lib/utils'
+
+type MessagesProps = {
+  className?: string
+  onBack?: () => void
+}
+
+export default function Messages({ className, onBack }: MessagesProps = {}) {
   const [messages, setMessages] = useState(initialMessages)
   const [draft, setDraft] = useState('')
   const [attachments, setAttachments] = useState<Array<ChatAttachment>>([])
@@ -71,10 +78,16 @@ export default function Messages() {
   return (
     <section
       aria-label="Messages with Elite Print"
-      className="flex min-w-0 flex-col overflow-hidden rounded-3xl border border-gray-200 bg-white font-atyp text-[#080812] shadow-sm"
+      className={cn(
+        'flex min-w-0 flex-col overflow-hidden rounded-3xl border border-gray-200 bg-white font-atyp text-[#080812] shadow-sm',
+        className,
+      )}
     >
-      <MessagesHeader />
-      <MessagesTranscript messages={messages} />
+      <MessagesHeader onBack={onBack} />
+      <MessagesTranscript
+        messages={messages}
+        className="flex-1 min-h-0 h-full"
+      />
       <MessageComposer
         draft={draft}
         attachments={attachments}

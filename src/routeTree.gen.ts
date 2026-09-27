@@ -14,6 +14,7 @@ import { Route as DashboardLayoutRouteRouteImport } from './routes/_dashboardLay
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as DashboardLayoutactiveOrdersActiveOrdersRouteImport } from './routes/_dashboardLayout/(active-orders)/active-orders'
 import { Route as DashboardLayoutdashboardDashboardRouteImport } from './routes/_dashboardLayout/(dashboard)/dashboard'
+import { Route as DashboardLayoutmessagesMessagesRouteImport } from './routes/_dashboardLayout/(messages)/messages'
 import { Route as DashboardLayoutmyRequestsMyRequestsRouteImport } from './routes/_dashboardLayout/(my-requests)/my-requests'
 import { Route as DashboardLayoutmyRequestsUploadRouteImport } from './routes/_dashboardLayout/(my-requests)/upload'
 import { Route as DashboardLayoutmyRequestsMyRequestsRequestIdRouteImport } from './routes/_dashboardLayout/(my-requests)/my-requests_.$requestId'
@@ -44,6 +45,12 @@ const DashboardLayoutdashboardDashboardRoute =
   DashboardLayoutdashboardDashboardRouteImport.update({
     id: '/(dashboard)/dashboard',
     path: '/dashboard',
+    getParentRoute: () => DashboardLayoutRouteRoute,
+  } as any)
+const DashboardLayoutmessagesMessagesRoute =
+  DashboardLayoutmessagesMessagesRouteImport.update({
+    id: '/(messages)/messages',
+    path: '/messages',
     getParentRoute: () => DashboardLayoutRouteRoute,
   } as any)
 const DashboardLayoutmyRequestsMyRequestsRoute =
@@ -82,6 +89,7 @@ export interface FileRoutesByFullPath {
   '/login': typeof LoginRoute
   '/active-orders': typeof DashboardLayoutactiveOrdersActiveOrdersRoute
   '/dashboard': typeof DashboardLayoutdashboardDashboardRoute
+  '/messages': typeof DashboardLayoutmessagesMessagesRoute
   '/my-requests': typeof DashboardLayoutmyRequestsMyRequestsRoute
   '/upload': typeof DashboardLayoutmyRequestsUploadRoute
   '/my-requests/$requestId': typeof DashboardLayoutmyRequestsMyRequestsRequestIdRoute
@@ -93,6 +101,7 @@ export interface FileRoutesByTo {
   '/login': typeof LoginRoute
   '/active-orders': typeof DashboardLayoutactiveOrdersActiveOrdersRoute
   '/dashboard': typeof DashboardLayoutdashboardDashboardRoute
+  '/messages': typeof DashboardLayoutmessagesMessagesRoute
   '/my-requests': typeof DashboardLayoutmyRequestsMyRequestsRoute
   '/upload': typeof DashboardLayoutmyRequestsUploadRoute
   '/my-requests/$requestId': typeof DashboardLayoutmyRequestsMyRequestsRequestIdRoute
@@ -106,6 +115,7 @@ export interface FileRoutesById {
   '/login': typeof LoginRoute
   '/_dashboardLayout/(active-orders)/active-orders': typeof DashboardLayoutactiveOrdersActiveOrdersRoute
   '/_dashboardLayout/(dashboard)/dashboard': typeof DashboardLayoutdashboardDashboardRoute
+  '/_dashboardLayout/(messages)/messages': typeof DashboardLayoutmessagesMessagesRoute
   '/_dashboardLayout/(my-requests)/my-requests': typeof DashboardLayoutmyRequestsMyRequestsRoute
   '/_dashboardLayout/(my-requests)/upload': typeof DashboardLayoutmyRequestsUploadRoute
   '/_dashboardLayout/(my-requests)/my-requests_/$requestId': typeof DashboardLayoutmyRequestsMyRequestsRequestIdRoute
@@ -119,6 +129,7 @@ export interface FileRouteTypes {
     | '/login'
     | '/active-orders'
     | '/dashboard'
+    | '/messages'
     | '/my-requests'
     | '/upload'
     | '/my-requests/$requestId'
@@ -130,6 +141,7 @@ export interface FileRouteTypes {
     | '/login'
     | '/active-orders'
     | '/dashboard'
+    | '/messages'
     | '/my-requests'
     | '/upload'
     | '/my-requests/$requestId'
@@ -142,6 +154,7 @@ export interface FileRouteTypes {
     | '/login'
     | '/_dashboardLayout/(active-orders)/active-orders'
     | '/_dashboardLayout/(dashboard)/dashboard'
+    | '/_dashboardLayout/(messages)/messages'
     | '/_dashboardLayout/(my-requests)/my-requests'
     | '/_dashboardLayout/(my-requests)/upload'
     | '/_dashboardLayout/(my-requests)/my-requests_/$requestId'
@@ -192,6 +205,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardLayoutdashboardDashboardRouteImport
       parentRoute: typeof DashboardLayoutRouteRoute
     }
+    '/_dashboardLayout/(messages)/messages': {
+      id: '/_dashboardLayout/(messages)/messages'
+      path: '/messages'
+      fullPath: '/messages'
+      preLoaderRoute: typeof DashboardLayoutmessagesMessagesRouteImport
+      parentRoute: typeof DashboardLayoutRouteRoute
+    }
     '/_dashboardLayout/(my-requests)/my-requests': {
       id: '/_dashboardLayout/(my-requests)/my-requests'
       path: '/my-requests'
@@ -233,6 +253,7 @@ declare module '@tanstack/react-router' {
 interface DashboardLayoutRouteRouteChildren {
   DashboardLayoutactiveOrdersActiveOrdersRoute: typeof DashboardLayoutactiveOrdersActiveOrdersRoute
   DashboardLayoutdashboardDashboardRoute: typeof DashboardLayoutdashboardDashboardRoute
+  DashboardLayoutmessagesMessagesRoute: typeof DashboardLayoutmessagesMessagesRoute
   DashboardLayoutmyRequestsMyRequestsRoute: typeof DashboardLayoutmyRequestsMyRequestsRoute
   DashboardLayoutmyRequestsUploadRoute: typeof DashboardLayoutmyRequestsUploadRoute
   DashboardLayoutmyRequestsMyRequestsRequestIdRoute: typeof DashboardLayoutmyRequestsMyRequestsRequestIdRoute
@@ -245,6 +266,7 @@ const DashboardLayoutRouteRouteChildren: DashboardLayoutRouteRouteChildren = {
     DashboardLayoutactiveOrdersActiveOrdersRoute,
   DashboardLayoutdashboardDashboardRoute:
     DashboardLayoutdashboardDashboardRoute,
+  DashboardLayoutmessagesMessagesRoute: DashboardLayoutmessagesMessagesRoute,
   DashboardLayoutmyRequestsMyRequestsRoute:
     DashboardLayoutmyRequestsMyRequestsRoute,
   DashboardLayoutmyRequestsUploadRoute: DashboardLayoutmyRequestsUploadRoute,

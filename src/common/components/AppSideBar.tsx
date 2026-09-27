@@ -73,7 +73,8 @@ export function AppSidebar() {
           <SidebarMenu className="gap-2">
             {sidebarItems.map((item) => {
               const Icon = item.icon
-              const isActive = item.route === window.location.pathname
+              console.log(item.route, window.location.pathname)
+              const isActive = window.location.pathname.includes(item.route)
               return (
                 <SidebarMenuItem
                   className={cn(open && !isMobile && 'mx-2')}

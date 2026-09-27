@@ -9,10 +9,14 @@ import {
   MessageScrollerViewport,
   useMessageScroller,
 } from '@/components/ui/message-scroller'
+import { cn } from '@/lib/utils'
 import type { ChatMessage } from '../-data/chatMessages'
 import ChatMessageItem from './ChatMessageItem'
 
-type MessagesTranscriptProps = { messages: Array<ChatMessage> }
+type MessagesTranscriptProps = {
+  messages: Array<ChatMessage>
+  className?: string
+}
 
 type ScrollToLatestProps = {
   latestMessage: ChatMessage | undefined
@@ -39,13 +43,16 @@ function ScrollToLatest({ latestMessage }: ScrollToLatestProps) {
 
 export default function MessagesTranscript({
   messages,
+  className,
 }: MessagesTranscriptProps) {
   const latestMessage = messages.at(-1)
 
   return (
     <MessageScrollerProvider defaultScrollPosition="end" autoScroll>
       <ScrollToLatest latestMessage={latestMessage} />
-      <MessageScroller className="h-[min(70dvh,535px)] min-h-80 w-full">
+      <MessageScroller
+        className={cn('h-[min(70dvh,535px)] min-h-80 w-full', className)}
+      >
         <MessageScrollerViewport aria-label="Conversation history">
           <MessageScrollerContent className="gap-4 p-4 sm:gap-5 sm:px-6 sm:pt-6 sm:pb-8 sm:justify-between">
             {!messages.length && (

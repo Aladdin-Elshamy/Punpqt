@@ -5,7 +5,7 @@ import OrderDetailsTabs from './-components/OrderDetailsTabs'
 import ProjectJourney from './-components/ProjectJourney'
 import JourneyStepHint from './-components/JourneyStepHint'
 import DesignFilesSection from './-sections/DesignFiles'
-import MessagesSection from './-sections/Messages'
+import MessagesSection from '../../../common/sections/Messages'
 
 export const Route = createFileRoute(
   '/_dashboardLayout/(active-orders)/active-orders_/$orderId/order-details',

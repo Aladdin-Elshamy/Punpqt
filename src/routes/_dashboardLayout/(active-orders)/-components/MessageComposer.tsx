@@ -31,7 +31,7 @@ export default function MessageComposer({
   return (
     <form
       aria-label="Compose a message"
-      className="shrink-0 border-t border-gray-100 px-3 pt-4 pb-6 sm:px-5 sm:pt-4.5 sm:pb-11.5"
+      className="shrink-0 border-t border-gray-100 px-3 pt-4 pb-4 sm:px-5"
       onSubmit={(event) => {
         event.preventDefault()
         sendMessage()
