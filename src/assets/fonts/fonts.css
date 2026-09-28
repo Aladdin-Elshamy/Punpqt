@@ -13,6 +13,7 @@
     font-weight: 500;
     font-display: swap;
 }
+
 @font-face {
     font-family: "AtypText";
     src: url("./atyp/AtypText-Semibold.woff2") format("woff2");
@@ -21,8 +22,8 @@
 }
 
 @font-face {
-    font-family: "Cairo";
-    src: url("../assets/fonts/Cairo-Bold.woff2") format("woff2");
+    font-family: "AtypText";
+    src: url("./atyp/AtypText-Bold.woff2") format("woff2");
     font-weight: 700;
     font-display: swap;
 }
