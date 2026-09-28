@@ -50,7 +50,7 @@ export default function ConversationsListSection({
       {filteredConversations.length === 0 ? (
         <ConversationListEmpty />
       ) : (
-        <div className="flex-1 min-h-0 overflow-y-auto divide-y divide-gray-100">
+        <div className="flex-1 overflow-y-auto divide-y divide-gray-100">
           {filteredConversations.map((conversation) => (
             <ConversationListItem
               key={conversation.id}
