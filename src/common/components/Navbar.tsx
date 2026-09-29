@@ -18,7 +18,7 @@ export default function Navbar() {
         </div>
 
         <div className="flex shrink-0 items-center gap-3 sm:gap-5 md:gap-6">
-          <Link preload="viewport" to="/profile"><Avatar src="" alt="D" /></Link>
+          <Link to="/profile"><Avatar src="" alt="D" /></Link>
           <Notification />
           <CurrenyTabs />
         </div>
