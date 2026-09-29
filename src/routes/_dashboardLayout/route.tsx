@@ -13,7 +13,7 @@ function RouteComponent() {
   return (
     <SidebarProvider>
       <AppSidebar />
-      <SidebarInset className="min-w-0 overflow-hidden bg-accent ">
+      <SidebarInset className="min-w-0 overflow-x-clip bg-accent">
         <Navbar />
         <div className="w-full flex-1 pt-20 sm:pt-16 relative">
           <div
