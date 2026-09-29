@@ -4,7 +4,7 @@ import type { ReactNode } from "react"
 
 export default function ActionBox({ title, value, description, action }: { title: string, value: string, description: string, action: ReactNode }) {
     return (
-        <Card className="relative z-10 py-8 px-6 font-atyp">
+        <Card className="relative z-10 py-8 px-6 ">
             <CardHeader className="flex flex-row justify-between items-center">
                 <CardTitle className="font-bold text-xl">{title}</CardTitle>
                 <Badge>{value}</Badge>

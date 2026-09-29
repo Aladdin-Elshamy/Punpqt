@@ -26,7 +26,7 @@ export default function ProductInformationCard({
   ] as const
 
   return (
-    <Card className="relative z-10 gap-0 overflow-hidden rounded-2xl border-border/70 py-0 font-atyp shadow-none">
+    <Card className="relative z-10 gap-0 overflow-hidden rounded-2xl border-border/70 py-0  shadow-none">
       <Package className="pointer-events-none absolute -inset-e-8 -top-8 size-44 text-primary/10 sm:-inset-e-10 -rotate-10 sm:-top-12 sm:size-52" />
       <CardContent className="relative p-6 sm:p-7">
         <div className='flex sm:items-center gap-2'>

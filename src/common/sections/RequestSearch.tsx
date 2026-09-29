@@ -10,7 +10,7 @@ import RequestSearchSelect from '../components/RequestSearchSelect'
 export default function RequestSearch({ hideFilters, filters, placeholder }: { hideFilters?: boolean, filters: string[], placeholder?: string }) {
   const [selectedFilter, setSelectedFilter] = useState(0)
   return (
-    <section className="rounded-2xl relative z-10 bg-primary/33 p-3 font-atyp sm:p-4">
+    <section className="rounded-2xl relative z-10 bg-primary/33 p-3  sm:p-4">
       <div className="flex flex-col gap-3 lg:flex-row lg:items-stretch">
         <div className="relative flex-1 max-w-xl">
           <Search

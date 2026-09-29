@@ -12,7 +12,7 @@ export const Route = createFileRoute(
 
 function RouteComponent() {
   return (
-    <div className="container mx-auto flex w-full flex-col gap-6 px-4 pb-16 sm:px-6 lg:px-10 z-10 relative font-atyp">
+    <div className="container mx-auto flex w-full flex-col gap-6 px-4 pb-16 sm:px-6 lg:px-10 z-10 relative">
       <Header
         title="Payment History"
         description="Manage your transactions"

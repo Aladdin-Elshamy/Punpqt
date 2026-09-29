@@ -3,7 +3,7 @@ import MessageAddIcon from "../icons/MessageAddIcon";
 
 export default function AdditionalNotes({ notes }: { notes: string }) {
     return (
-        <Card className="gap-0 rounded-2xl border-border/70 py-0 font-atyp shadow-none">
+        <Card className="gap-0 rounded-2xl border-border/70 py-0  shadow-none">
             <CardContent className="p-4">
                 <div className="flex items-center gap-3">
                     <span className="flex size-10 items-center justify-center rounded-xl bg-primary/10 text-primary">

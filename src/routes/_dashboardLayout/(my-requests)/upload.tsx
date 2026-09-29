@@ -14,7 +14,7 @@ function RouteComponent() {
         title="Upload Files"
         description="Please upload all the necessary files for your printing request."
       />
-      <div className="grid items-start gap-6 font-atyp lg:grid-cols-[minmax(0,1.7fr)_minmax(0,1fr)]">
+      <div className="grid items-start gap-6  lg:grid-cols-[minmax(0,1.7fr)_minmax(0,1fr)]">
         <UploadFilesForm />
         <UploadOfferCard />
       </div>

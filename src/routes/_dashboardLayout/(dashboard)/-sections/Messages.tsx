@@ -19,7 +19,7 @@ export default function Messages() {
   const [selected, setSelected] = useState<number>(0)
 
   return (
-    <Card className="h-full gap-0 py-6 font-atyp shadow-none">
+    <Card className="h-full gap-0 py-6  shadow-none">
       <MessagesHeader newCount={3} />
       <MessagesList
         messages={messages}

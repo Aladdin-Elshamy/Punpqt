@@ -35,7 +35,7 @@ export default function OrderDetailsHeader({
   }).format(new Date(expectedDelivery))
 
   return (
-    <Card className="gap-0 rounded-xl bg-white py-6 font-atyp ring-0 sm:pb-8 relative z-10">
+    <Card className="gap-0 rounded-xl bg-white py-6  ring-0 sm:pb-8 relative z-10">
       <CardHeader className="flex flex-col gap-5 px-5 sm:flex-row sm:items-center sm:justify-between sm:px-9">
         <div className="flex min-w-0 items-start sm:items-center gap-3">
           <span className="flex size-14 shrink-0 items-center justify-center rounded-xl bg-[#EFF3F8] text-muted-foreground">

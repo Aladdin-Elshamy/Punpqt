@@ -14,7 +14,7 @@ export default function SupportDetails({
 }: SupportDetailsProps) {
   return (
     <div className="grid gap-6 sm:grid-cols-2">
-      <Card className="gap-0 rounded-2xl border-border/70 py-0 font-atyp shadow-none">
+      <Card className="gap-0 rounded-2xl border-border/70 py-0  shadow-none">
         <CardContent className="p-4">
           <div className="flex items-center gap-3">
             <span className="flex size-10 items-center justify-center rounded-xl bg-primary/10 text-primary">

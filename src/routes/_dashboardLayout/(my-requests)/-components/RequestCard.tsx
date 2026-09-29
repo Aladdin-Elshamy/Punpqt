@@ -28,7 +28,7 @@ export default function RequestCard({
   secondaryAction,
 }: RequestCardProps) {
   return (
-    <Card className="gap-0 relative z-10 rounded-2xl border-border/70 py-0 font-atyp shadow-none">
+    <Card className="gap-0 relative z-10 rounded-2xl border-border/70 py-0  shadow-none">
       <CardContent className="flex flex-col gap-8 p-6 sm:p-7">
         <div>
           <div className="flex flex-wrap items-center gap-2">

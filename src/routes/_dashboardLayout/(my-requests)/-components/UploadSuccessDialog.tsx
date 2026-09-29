@@ -21,7 +21,7 @@ export default function UploadSuccessDialog() {
   return (
     <DialogContent
       showCloseButton={false}
-      className="gap-0 max-h-[90vh] overflow-y-auto rounded-2xl bg-white px-6 py-8 font-atyp text-black ring-0 sm:max-w-180 sm:px-14 sm:py-12 **:tracking-normal"
+      className="gap-0 max-h-[90vh] overflow-y-auto rounded-2xl bg-white px-6 py-8  text-black ring-0 sm:max-w-180 sm:px-14 sm:py-12 **:tracking-normal"
     >
       <DialogHeader className="items-center gap-0 text-center">
         <span className="mb-5 flex size-25 shrink-0 items-center justify-center rounded-full bg-[#E7F3F4] text-[#006970]">
@@ -31,7 +31,7 @@ export default function UploadSuccessDialog() {
             aria-hidden="true"
           />
         </span>
-        <DialogTitle className="font-atyp text-xl leading-tight font-semibold sm:text-[30px]">
+        <DialogTitle className=" text-xl leading-tight font-semibold sm:text-[30px]">
           Files Uploaded Successfully
         </DialogTitle>
         <DialogDescription className="mt-4 text-lg leading-6 text-muted-foreground">

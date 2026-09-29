@@ -16,7 +16,7 @@ export default function RequestActivityTimeline({
   items,
 }: RequestActivityTimelineProps) {
   return (
-    <Card className="gap-0 rounded-2xl border-border/70 py-0 font-atyp shadow-none">
+    <Card className="gap-0 rounded-2xl border-border/70 py-0  shadow-none">
       <CardContent className="p-6 sm:p-7">
         <h2 className="text-xl font-bold tracking-tight">Activity Timeline</h2>
         <ol className="mt-6 space-y-0">

@@ -135,7 +135,7 @@ export default function QuotationReadyState() {
   const [selectedOfferId, setSelectedOfferId] = useState<string | null>(null)
   const selectedOffer = offers.find((offer) => offer.id === selectedOfferId)
   return (
-    <div className="@container space-y-6 font-atyp">
+    <div className="@container space-y-6 ">
       <QuotationBanner
         title={`${offers.length} Quotations Received`}
         description="Great news! Multiple printing vendors have responded to your request. Compare pricing, delivery time and ratings before selecting your preferred quotation."

@@ -21,7 +21,7 @@ export default function RequestDetailsTabs({
     <Tabs
       value={activatTab}
       onValueChange={setActivateTab}
-      className="gap-6 font-atyp relative z-10"
+      className="gap-6  relative z-10"
     >
       <TabsList
         className="py-6 px-2 rounded-xl w-full bg-[#E0E5E6]"

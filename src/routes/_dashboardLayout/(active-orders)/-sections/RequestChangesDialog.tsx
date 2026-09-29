@@ -19,7 +19,7 @@ export default function RequestChangesDialog({ onSend }: { onSend: () => void })
   return (
     <DialogContent className="max-h-[92vh] overflow-y-auto rounded-2xl bg-white px-5 py-7 text-black ring-0 sm:max-w-2xl sm:px-10 sm:py-9">
       <DialogHeader className="gap-2">
-        <DialogTitle className="font-atyp text-2xl font-semibold sm:text-[30px]">
+        <DialogTitle className=" text-2xl font-semibold sm:text-[30px]">
           Request Changes
         </DialogTitle>
         <DialogDescription className="text-base leading-6 text-muted-foreground">

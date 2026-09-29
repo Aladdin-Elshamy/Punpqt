@@ -70,7 +70,7 @@ export default function QuotationOfferCard({
   ]
   return (
     <Card
-      className={`h-full rounded-3xl py-0 font-atyp shadow-sm transition-[opacity,background-color,box-shadow] ${isSelected ? 'bg-primary/5 ring-2 ring-primary' : 'ring-border/60'} ${isDimmed ? 'opacity-50 hover:opacity-100 focus-within:opacity-100' : ''} ${applyBorder ? 'ring-2 ring-primary' : ''}`}
+      className={`h-full rounded-3xl py-0  shadow-sm transition-[opacity,background-color,box-shadow] ${isSelected ? 'bg-primary/5 ring-2 ring-primary' : 'ring-border/60'} ${isDimmed ? 'opacity-50 hover:opacity-100 focus-within:opacity-100' : ''} ${applyBorder ? 'ring-2 ring-primary' : ''}`}
     >
       <CardContent className="flex h-full flex-col gap-5 p-4">
         <div className="flex flex-wrap items-start justify-between gap-3">

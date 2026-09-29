@@ -41,7 +41,7 @@ export default function OrderDetailsSection({
     specifications,
   }
   return (
-    <div className="grid min-w-0 gap-6 font-atyp xl:grid-cols-[minmax(0,1fr)_24rem] lg:gap-8">
+    <div className="grid min-w-0 gap-6  xl:grid-cols-[minmax(0,1fr)_24rem] lg:gap-8">
       <div className="space-y-6">
         <ProductInformationCard request={request} />
         <SupportDetails

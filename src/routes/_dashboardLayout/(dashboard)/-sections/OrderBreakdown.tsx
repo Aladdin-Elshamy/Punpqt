@@ -12,7 +12,7 @@ const breakdownItems = [
 
 export default function OrderBreakdown() {
   return (
-    <Card className="gap-6 py-5 font-atyp shadow-none">
+    <Card className="gap-6 py-5  shadow-none">
       <CardHeader className="px-5 pb-0">
         <CardTitle className="text-base font-bold">Order Breakdown</CardTitle>
       </CardHeader>

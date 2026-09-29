@@ -17,7 +17,7 @@ export default function QuotationNextStepsCard({
   onUpload,
 }: QuotationNextStepsCardProps) {
   return (
-    <Card className="h-full min-h-103 rounded-2xl py-0 font-atyp shadow-sm ring-border/60">
+    <Card className="h-full min-h-103 rounded-2xl py-0  shadow-sm ring-border/60">
       <CardContent className="p-5">
         <h3 className="text-xl font-semibold">What happens next?</h3>
         <ol role="list" className="mt-5 space-y-5">

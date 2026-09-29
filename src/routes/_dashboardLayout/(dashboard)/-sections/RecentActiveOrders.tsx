@@ -5,7 +5,7 @@ import OrderTable from '../-components/OrderTable'
 
 export default function RecentActiveOrders() {
   return (
-    <Card className="h-full gap-6 py-6 font-atyp shadow-none">
+    <Card className="h-full gap-6 py-6  shadow-none">
       <CardHeader className="flex flex-row items-center justify-between px-6">
         <CardTitle className="text-xl font-bold">
           recent active orders

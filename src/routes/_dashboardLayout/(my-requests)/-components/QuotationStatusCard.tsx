@@ -14,7 +14,7 @@ export default function QuotationStatusCard({
   expectedResponse,
 }: QuotationStatusCardProps) {
   return (
-    <Card className="gap-0 relative z-10 rounded-2xl border-border/70 py-0 font-atyp shadow-none bg-primary text-white">
+    <Card className="gap-0 relative z-10 rounded-2xl border-border/70 py-0  shadow-none bg-primary text-white">
       <CardContent className="p-6 sm:p-7">
         <h2 className="text-xl font-bold tracking-tight flex gap-4 items-center"><HbarsIcon className="size-6" aria-hidden="true" /><span className='trim'>Quotation Status</span></h2>
         <div className="mt-6 grid grid-cols-2 gap-3">

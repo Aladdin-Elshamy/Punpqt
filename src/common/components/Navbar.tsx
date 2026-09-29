@@ -3,6 +3,7 @@ import Avatar from './Avatar'
 import Notification from './Notification'
 import CurrenyTabs from './CurrenyTabs'
 import { SidebarTrigger } from '#/components/ui/sidebar'
+import { Link } from '@tanstack/react-router'
 
 export default function Navbar() {
   return (
@@ -17,7 +18,7 @@ export default function Navbar() {
         </div>
 
         <div className="flex shrink-0 items-center gap-3 sm:gap-5 md:gap-6">
-          <Avatar src="" alt="D" />
+          <Link preload="viewport" to="/profile"><Avatar src="" alt="D" /></Link>
           <Notification />
           <CurrenyTabs />
         </div>

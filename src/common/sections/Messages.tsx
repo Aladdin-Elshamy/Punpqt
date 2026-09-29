@@ -79,7 +79,7 @@ export default function Messages({ className, onBack }: MessagesProps = {}) {
     <section
       aria-label="Messages with Elite Print"
       className={cn(
-        'flex min-w-0 flex-col overflow-hidden rounded-3xl border border-gray-200 bg-white font-atyp text-[#080812] shadow-sm',
+        'flex min-w-0 flex-col overflow-hidden rounded-3xl border border-gray-200 bg-white  text-[#080812] shadow-sm',
         className,
       )}
     >

@@ -49,7 +49,7 @@ export default function SamplePreview() {
         <Tabs
           value={activeTab}
           onValueChange={(value) => setActiveTab(value as Revision)}
-          className="relative z-10 min-w-0 gap-7 font-atyp"
+          className="relative z-10 min-w-0 gap-7 "
         >
           <div className="flex flex-wrap items-center justify-between gap-3">
             <TabsList className="h-12! rounded-2xl bg-[#F3F3F5] p-1">

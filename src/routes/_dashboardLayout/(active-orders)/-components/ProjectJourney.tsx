@@ -38,7 +38,7 @@ export default function ProjectJourney({
       ? journeySteps.length
       : journeySteps.findIndex((step) => step.id === activeStep)
   return (
-    <Card className="gap-5 rounded-3xl bg-white py-6 font-atyp shadow-sm ring-0 **:tracking-normal">
+    <Card className="gap-5 rounded-3xl bg-white py-6  shadow-sm ring-0 **:tracking-normal">
       <CardHeader className="px-5 sm:px-6">
         <h2 className="text-lg font-semibold">Project Journey</h2>
       </CardHeader>

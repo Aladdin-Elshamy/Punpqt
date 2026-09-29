@@ -46,7 +46,7 @@ const requests = [
 
 export default function RequestsList() {
   return (
-    <section aria-label="Your requests" className="space-y-6 font-atyp">
+    <section aria-label="Your requests" className="space-y-6 ">
       {requests.map((request) => (
         <RequestCard
           key={`${request.status}-${request.requestId}`}

@@ -20,7 +20,7 @@ const printerNotes =
 
 export default function DesignFiles() {
   return (
-    <div className="relative z-10 space-y-6 font-atyp sm:space-y-8">
+    <div className="relative z-10 space-y-6  sm:space-y-8">
       <JourneyStepHint
         title="Changes Requested"
         description="The printer reviewed your files and requested revisions before production can begin."

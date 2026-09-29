@@ -16,7 +16,7 @@ export default function QuotationAcceptanceBar({
   onAccept,
 }: QuotationAcceptanceBarProps) {
   return (
-    <div className="flex flex-col gap-4 rounded-3xl border border-primary bg-linear-to-r from-primary to-[#1095A1] p-5 font-atyp text-white sm:flex-row sm:items-center sm:justify-between">
+    <div className="flex flex-col gap-4 rounded-3xl border border-primary bg-linear-to-r from-primary to-[#1095A1] p-5  text-white sm:flex-row sm:items-center sm:justify-between">
       <div role="status" aria-atomic="true" className="min-w-0 space-y-1">
         <p className="font-semibold">Accept: {vendorName}</p>
         <p className="text-sm">

@@ -32,7 +32,7 @@ const summaryCards = [
 
 export default function QuotationPendingState() {
   return (
-    <div className="space-y-6 font-atyp">
+    <div className="space-y-6 ">
       <QuotationBanner
         title='Waiting for Quotations'
         description="Your request has been successfully sent to available printing vendors."

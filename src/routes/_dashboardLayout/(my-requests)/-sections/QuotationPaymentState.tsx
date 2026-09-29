@@ -73,7 +73,7 @@ const summaryCards = [
 
 export default function QuotationPaymentState() {
   return (
-    <div className="@container space-y-6 font-atyp">
+    <div className="@container space-y-6 ">
       <QuotationBanner
         title={`Selected Quotation`}
         description="You have successfully selected a quotation. Complete the payment to allow the printer to start production."

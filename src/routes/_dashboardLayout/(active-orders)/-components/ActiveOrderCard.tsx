@@ -36,7 +36,7 @@ export default function ActiveOrderCard({
   }).format(new Date(order.expectedDelivery))
 
   return (
-    <Card className="gap-0 rounded-xl bg-white py-4 font-atyp ring-0 **:tracking-normal">
+    <Card className="gap-0 rounded-xl bg-white py-4  ring-0 **:tracking-normal">
       <CardHeader className="flex flex-col gap-4 px-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex min-w-0 items-center gap-3">
           <span

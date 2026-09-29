@@ -18,6 +18,7 @@ import { Route as DashboardLayoutmessagesMessagesRouteImport } from './routes/_d
 import { Route as DashboardLayoutmyRequestsMyRequestsRouteImport } from './routes/_dashboardLayout/(my-requests)/my-requests'
 import { Route as DashboardLayoutmyRequestsUploadRouteImport } from './routes/_dashboardLayout/(my-requests)/upload'
 import { Route as DashboardLayoutpaymentHistoryPaymentHistoryRouteImport } from './routes/_dashboardLayout/(payment-history)/payment-history'
+import { Route as DashboardLayoutprofileProfileRouteImport } from './routes/_dashboardLayout/(profile)/profile'
 import { Route as DashboardLayoutmyRequestsMyRequestsRequestIdRouteImport } from './routes/_dashboardLayout/(my-requests)/my-requests_.$requestId'
 import { Route as DashboardLayoutactiveOrdersActiveOrdersOrderIdOrderDetailsRouteImport } from './routes/_dashboardLayout/(active-orders)/active-orders_.$orderId.order-details'
 import { Route as DashboardLayoutactiveOrdersActiveOrdersOrderIdReviewRouteImport } from './routes/_dashboardLayout/(active-orders)/active-orders_.$orderId.review'
@@ -72,6 +73,12 @@ const DashboardLayoutpaymentHistoryPaymentHistoryRoute =
     path: '/payment-history',
     getParentRoute: () => DashboardLayoutRouteRoute,
   } as any)
+const DashboardLayoutprofileProfileRoute =
+  DashboardLayoutprofileProfileRouteImport.update({
+    id: '/(profile)/profile',
+    path: '/profile',
+    getParentRoute: () => DashboardLayoutRouteRoute,
+  } as any)
 const DashboardLayoutmyRequestsMyRequestsRequestIdRoute =
   DashboardLayoutmyRequestsMyRequestsRequestIdRouteImport.update({
     id: '/(my-requests)/my-requests_/$requestId',
@@ -100,6 +107,7 @@ export interface FileRoutesByFullPath {
   '/my-requests': typeof DashboardLayoutmyRequestsMyRequestsRoute
   '/upload': typeof DashboardLayoutmyRequestsUploadRoute
   '/payment-history': typeof DashboardLayoutpaymentHistoryPaymentHistoryRoute
+  '/profile': typeof DashboardLayoutprofileProfileRoute
   '/my-requests/$requestId': typeof DashboardLayoutmyRequestsMyRequestsRequestIdRoute
   '/active-orders/$orderId/order-details': typeof DashboardLayoutactiveOrdersActiveOrdersOrderIdOrderDetailsRoute
   '/active-orders/$orderId/review': typeof DashboardLayoutactiveOrdersActiveOrdersOrderIdReviewRoute
@@ -113,6 +121,7 @@ export interface FileRoutesByTo {
   '/my-requests': typeof DashboardLayoutmyRequestsMyRequestsRoute
   '/upload': typeof DashboardLayoutmyRequestsUploadRoute
   '/payment-history': typeof DashboardLayoutpaymentHistoryPaymentHistoryRoute
+  '/profile': typeof DashboardLayoutprofileProfileRoute
   '/my-requests/$requestId': typeof DashboardLayoutmyRequestsMyRequestsRequestIdRoute
   '/active-orders/$orderId/order-details': typeof DashboardLayoutactiveOrdersActiveOrdersOrderIdOrderDetailsRoute
   '/active-orders/$orderId/review': typeof DashboardLayoutactiveOrdersActiveOrdersOrderIdReviewRoute
@@ -128,6 +137,7 @@ export interface FileRoutesById {
   '/_dashboardLayout/(my-requests)/my-requests': typeof DashboardLayoutmyRequestsMyRequestsRoute
   '/_dashboardLayout/(my-requests)/upload': typeof DashboardLayoutmyRequestsUploadRoute
   '/_dashboardLayout/(payment-history)/payment-history': typeof DashboardLayoutpaymentHistoryPaymentHistoryRoute
+  '/_dashboardLayout/(profile)/profile': typeof DashboardLayoutprofileProfileRoute
   '/_dashboardLayout/(my-requests)/my-requests_/$requestId': typeof DashboardLayoutmyRequestsMyRequestsRequestIdRoute
   '/_dashboardLayout/(active-orders)/active-orders_/$orderId/order-details': typeof DashboardLayoutactiveOrdersActiveOrdersOrderIdOrderDetailsRoute
   '/_dashboardLayout/(active-orders)/active-orders_/$orderId/review': typeof DashboardLayoutactiveOrdersActiveOrdersOrderIdReviewRoute
@@ -143,6 +153,7 @@ export interface FileRouteTypes {
     | '/my-requests'
     | '/upload'
     | '/payment-history'
+    | '/profile'
     | '/my-requests/$requestId'
     | '/active-orders/$orderId/order-details'
     | '/active-orders/$orderId/review'
@@ -156,6 +167,7 @@ export interface FileRouteTypes {
     | '/my-requests'
     | '/upload'
     | '/payment-history'
+    | '/profile'
     | '/my-requests/$requestId'
     | '/active-orders/$orderId/order-details'
     | '/active-orders/$orderId/review'
@@ -170,6 +182,7 @@ export interface FileRouteTypes {
     | '/_dashboardLayout/(my-requests)/my-requests'
     | '/_dashboardLayout/(my-requests)/upload'
     | '/_dashboardLayout/(payment-history)/payment-history'
+    | '/_dashboardLayout/(profile)/profile'
     | '/_dashboardLayout/(my-requests)/my-requests_/$requestId'
     | '/_dashboardLayout/(active-orders)/active-orders_/$orderId/order-details'
     | '/_dashboardLayout/(active-orders)/active-orders_/$orderId/review'
@@ -246,6 +259,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardLayoutpaymentHistoryPaymentHistoryRouteImport
       parentRoute: typeof DashboardLayoutRouteRoute
     }
+    '/_dashboardLayout/(profile)/profile': {
+      id: '/_dashboardLayout/(profile)/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof DashboardLayoutprofileProfileRouteImport
+      parentRoute: typeof DashboardLayoutRouteRoute
+    }
     '/_dashboardLayout/(my-requests)/my-requests_/$requestId': {
       id: '/_dashboardLayout/(my-requests)/my-requests_/$requestId'
       path: '/my-requests/$requestId'
@@ -277,6 +297,7 @@ interface DashboardLayoutRouteRouteChildren {
   DashboardLayoutmyRequestsMyRequestsRoute: typeof DashboardLayoutmyRequestsMyRequestsRoute
   DashboardLayoutmyRequestsUploadRoute: typeof DashboardLayoutmyRequestsUploadRoute
   DashboardLayoutpaymentHistoryPaymentHistoryRoute: typeof DashboardLayoutpaymentHistoryPaymentHistoryRoute
+  DashboardLayoutprofileProfileRoute: typeof DashboardLayoutprofileProfileRoute
   DashboardLayoutmyRequestsMyRequestsRequestIdRoute: typeof DashboardLayoutmyRequestsMyRequestsRequestIdRoute
   DashboardLayoutactiveOrdersActiveOrdersOrderIdOrderDetailsRoute: typeof DashboardLayoutactiveOrdersActiveOrdersOrderIdOrderDetailsRoute
   DashboardLayoutactiveOrdersActiveOrdersOrderIdReviewRoute: typeof DashboardLayoutactiveOrdersActiveOrdersOrderIdReviewRoute
@@ -293,6 +314,7 @@ const DashboardLayoutRouteRouteChildren: DashboardLayoutRouteRouteChildren = {
   DashboardLayoutmyRequestsUploadRoute: DashboardLayoutmyRequestsUploadRoute,
   DashboardLayoutpaymentHistoryPaymentHistoryRoute:
     DashboardLayoutpaymentHistoryPaymentHistoryRoute,
+  DashboardLayoutprofileProfileRoute: DashboardLayoutprofileProfileRoute,
   DashboardLayoutmyRequestsMyRequestsRequestIdRoute:
     DashboardLayoutmyRequestsMyRequestsRequestIdRoute,
   DashboardLayoutactiveOrdersActiveOrdersOrderIdOrderDetailsRoute:

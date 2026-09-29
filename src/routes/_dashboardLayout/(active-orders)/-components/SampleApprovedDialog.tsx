@@ -29,7 +29,7 @@ export default function SampleApprovedDialog({
             aria-hidden="true"
           />
         </span>
-        <DialogTitle className="font-atyp text-xl leading-tight font-semibold sm:text-2xl">
+        <DialogTitle className=" text-xl leading-tight font-semibold sm:text-2xl">
           {title}
         </DialogTitle>
         <DialogDescription className="mt-4 max-w-md leading-6 text-muted-foreground text-base font-semibold">

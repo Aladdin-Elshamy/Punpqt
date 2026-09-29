@@ -47,7 +47,7 @@ export default function OrderDetailsTabs({
     <Tabs
       value={activeTab}
       onValueChange={(value) => setActiveTab(value)}
-      className="min-w-0 gap-7 font-atyp relative z-10"
+      className="min-w-0 gap-7  relative z-10"
     >
       <div className="max-w-full overflow-x-auto pb-1">
         <TabsList
