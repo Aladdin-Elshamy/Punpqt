@@ -116,7 +116,7 @@ export default function SamplePreview() {
           </Button>
           <Button
             variant="outline"
-            className="h-11 w-full rounded-xl border-primary bg-white font-normal text-primary hover:text-white hover:bg-primary hover:border-0 sm:w-50"
+            className="h-11 w-full rounded-xl border-primary bg-white text-primary hover:text-white hover:bg-primary hover:border-0 sm:w-50"
             onClick={() => setIsChangesOpen(true)}
           >
             Request Changes

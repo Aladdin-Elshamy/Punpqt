@@ -1,3 +1,4 @@
+import { useNavigate } from '@tanstack/react-router'
 import RequestCard from '../-components/RequestCard'
 
 const requests = [
@@ -45,10 +46,18 @@ const requests = [
 ] as const
 
 export default function RequestsList() {
+  const navigate = useNavigate()
   return (
     <section aria-label="Your requests" className="space-y-6 ">
       {requests.map((request) => (
         <RequestCard
+          onSecondaryActionClick={() =>
+            navigate({
+              to: '/my-requests/$requestId',
+              params: { requestId: request.requestId },
+              search: { status: request.status },
+            })
+          }
           key={`${request.status}-${request.requestId}`}
           {...request}
         />

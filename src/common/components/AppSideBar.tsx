@@ -19,7 +19,7 @@ import SearchIcon from '../icons/SearchIcon'
 import WalletIcon from '../icons/WalletIcon'
 import { cn } from '#/lib/utils'
 import { LogOut } from 'lucide-react'
-import { Link } from '@tanstack/react-router'
+import { Link, useRouterState } from '@tanstack/react-router'
 
 const sidebarItems = [
   {
@@ -62,6 +62,7 @@ const sidebarItems = [
 
 export function AppSidebar() {
   const { open, isMobile, setOpenMobile } = useSidebar()
+  const router = useRouterState()
   return (
     <Sidebar collapsible="icon" className="bg-white">
       <SidebarHeader className={cn('py-6 border-b', open && 'ps-6')}>
@@ -71,13 +72,19 @@ export function AppSidebar() {
       <SidebarContent>
         <SidebarGroup>
           <SidebarMenu className="gap-2">
-            {sidebarItems.map((item) => {
+            {sidebarItems.map((item, index) => {
               const Icon = item.icon
-              const isActive = window.location.pathname.includes(item.route)
+              const isActive = router.location.pathname.includes(item.route)
+              console.log(
+                'isActive',
+                isActive,
+                router.location.pathname,
+                item.route,
+              )
               return (
                 <SidebarMenuItem
                   className={cn(open && !isMobile && 'mx-2')}
-                  key={item.key}
+                  key={item.key + index}
                 >
                   <SidebarMenuButton
                     render={<Link to={item.route} />}

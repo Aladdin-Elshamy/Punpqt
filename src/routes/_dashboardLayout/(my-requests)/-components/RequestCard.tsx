@@ -15,7 +15,8 @@ type RequestCardProps = {
   specifications: readonly string[]
   details: readonly RequestDetail[]
   primaryAction: string
-  secondaryAction?: string
+  secondaryAction?: string;
+  onSecondaryActionClick?: () => void;
 }
 
 export default function RequestCard({
@@ -26,6 +27,7 @@ export default function RequestCard({
   details,
   primaryAction,
   secondaryAction,
+  onSecondaryActionClick,
 }: RequestCardProps) {
   return (
     <Card className="gap-0 relative z-10 rounded-2xl border-border/70 py-0  shadow-none">
@@ -66,7 +68,11 @@ export default function RequestCard({
           </dl>
           <div className="flex w-full flex-col-reverse gap-3 sm:w-auto sm:flex-row sm:items-center">
             {secondaryAction && (
-              <Button variant="outline" className="h-11 px-5">
+              <Button
+                variant="outline"
+                className="h-11 px-5"
+                onClick={onSecondaryActionClick}
+              >
                 {secondaryAction}
               </Button>
             )}

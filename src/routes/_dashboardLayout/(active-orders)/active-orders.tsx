@@ -1,7 +1,7 @@
 import ActiveOrderCard from './-components/ActiveOrderCard'
 import { activeOrders } from './-data/activeOrders'
 import Header from '#/common/sections/Header'
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, useNavigate } from '@tanstack/react-router'
 import RequestSearch from '#/common/sections/RequestSearch'
 import QuotationSummaryCard from '#/common/components/QuotationSummaryCard'
 import { Package, ThumbsUp } from 'lucide-react'
@@ -29,7 +29,7 @@ const summaryCards = [
     iconClassName: 'bg-sky-50 text-sky-500 size-12',
   },
   {
-    label: 'Delieverd',
+    label: 'Delivered',
     value: '5',
     icon: <ThumbsUp className="size-5" />,
     iconClassName: 'bg-primary/5 text-primary size-12',
@@ -42,6 +42,7 @@ export const Route = createFileRoute(
 })
 
 function RouteComponent() {
+  const navigate = useNavigate()
   return (
     <div className="container mx-auto flex w-full flex-col gap-10 px-4 pb-16 sm:px-6 lg:px-10">
       <Header
@@ -64,7 +65,22 @@ function RouteComponent() {
         className="relative z-10 flex flex-col gap-7"
       >
         {activeOrders.map((order) => (
-          <ActiveOrderCard key={order.id} order={order} />
+          <ActiveOrderCard
+            onViewDetails={() =>
+              navigate({
+                to: '/active-orders/$orderId/order-details',
+                params: { orderId: order.id },
+              })
+            }
+            onAction={() =>
+              navigate({
+                to: '/active-orders/$orderId/review',
+                params: { orderId: order.id },
+              })
+            }
+            key={order.id}
+            order={order}
+          />
         ))}
       </section>
     </div>
